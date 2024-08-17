@@ -1,11 +1,9 @@
-import Time from '@/components/time'
-
 const Home = () => (
   <section>
     <div>
       <h1 className='mb-2 text-xl font-bold'>marie 🏳️‍⚧️</h1>
-      <div className='text-overlay0 mb-5 flex space-x-2'>
-        <span>she/her, frontend developer</span> <span>-</span> <Time />
+      <div className='text-overlay0 mb-5'>
+        she/her, frontend developer
       </div>
     </div>
     <ul className='animated-list grid grid-cols-1 sm:grid-cols-2'>
