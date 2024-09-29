@@ -1,7 +1,7 @@
 const Home = () => (
   <section>
     <div>
-      <h1 className='mb-2 text-xl font-bold'>marie 🏳️‍⚧️</h1>
+      <h1 className='mb-2 text-xl font-bold'>marie</h1>
       <div className='text-overlay0 mb-5'>
         she/her, frontend developer
       </div>
