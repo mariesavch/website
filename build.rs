@@ -5,7 +5,7 @@ fn main() {
             "-i",
             "tailwind.css",
             "-o",
-            "./assets/tailwind.css",
+            "./public/tailwind.css",
             "--minify",
         ])
         .env("NODE_ENV", "production")
