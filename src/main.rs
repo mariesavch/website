@@ -2,7 +2,7 @@
 
 use dioxus::prelude::*;
 
-const _TAILWIND_URL: &str = manganis::mg!(file("public/tailwind.css"));
+const _TAILWIND_URL: &str = manganis::mg!(file("assets/tailwind.css"));
 
 fn main() {
     dioxus::launch(App);

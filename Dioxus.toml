@@ -6,17 +6,17 @@ default_platform = "web"
 
 out_dir = "dist"
 
-asset_dir = "public"
+asset_dir = "assets"
 
 [web.app]
 title = "marie"
 
 [web.watcher]
 reload_html = true
-watch_path = ["src", "public"]
+watch_path = ["src", "assets"]
 
 [web.resource]
-style = ["public/tailwind.css"]
+style = ["assets/tailwind.css"]
 script = []
 
 [web.resource.dev]
