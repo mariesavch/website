@@ -41,7 +41,7 @@ fn App() -> Element {
     use_future(move || async move {
         let start = Instant::now();
         loop {
-            sleep(std::time::Duration::from_millis(27)).await;
+            sleep(std::time::Duration::from_millis(100)).await;
             millis.set(start.elapsed().as_millis() as i64);
         }
     });
