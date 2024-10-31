@@ -2,12 +2,13 @@
 
 use async_std::task::sleep;
 use dioxus::prelude::*;
+use dioxus_logger::tracing::{info, Level};
 use serde::Deserialize;
 use web_time::Instant;
 
-const _TAILWIND_URL: &str = manganis::mg!(file("assets/tailwind.css"));
-
 fn main() {
+    dioxus_logger::init(Level::INFO).expect("failed to init logger");
+    info!("starting app");
     dioxus::launch(App);
 }
 
@@ -53,6 +54,7 @@ fn App() -> Element {
     );
 
     rsx! {
+        document::Link { rel: "stylesheet", href: asset!("/assets/tailwind.css") }
         main { class: "mx-auto max-w-3xl px-6 pb-20",
             div { class: "pt-16",
                 div {
