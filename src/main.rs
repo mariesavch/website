@@ -62,8 +62,6 @@ fn App() -> Element {
                             p {
                                 "she/her, {data.main.temp.round()}°C {data.weather[0].description.as_str()}, {time}"
                             }
-                        } else {
-                            p { "loading..." }
                         }
                     }
                 }
@@ -86,6 +84,69 @@ fn App() -> Element {
                                 class: "underlined",
                                 href: "mailto:mariesavch@icloud.com",
                                 "mariesavch@icloud.com"
+                            }
+                        }
+                    }
+                }
+                h2 { class: "text-xl mb-2 mt-8 font-bold", "projects" }
+                ul { class: "animated-list grid grid-cols-1 sm:grid-cols-2",
+                    li {
+                        div { class: "flex py-3 flex-col gap-1",
+                            span { class: "text-overlay0", "view your weather" }
+                            a {
+                                class: "underlined",
+                                href: "https://wtrs.vercel.app",
+                                "weather"
+                            }
+                        }
+                    }
+                    li {
+                        div { class: "flex py-3 flex-col gap-1",
+                            span { class: "text-overlay0", "simple todo app" }
+                            a {
+                                class: "underlined",
+                                href: "https://tdwr.vercel.app",
+                                "todo"
+                            }
+                        }
+                    }
+                    li {
+                        div { class: "flex py-3 flex-col gap-1",
+                            span { class: "text-overlay0", "information about countries" }
+                            a {
+                                class: "underlined",
+                                href: "https://cntrn.vercel.app",
+                                "countryinfo"
+                            }
+                        }
+                    }
+                    li {
+                        div { class: "flex py-3 flex-col gap-1",
+                            span { class: "text-overlay0", "cli information about countries" }
+                            a {
+                                class: "underlined",
+                                href: "https://github.com/mariesavch/countryfetch-rs",
+                                "countryfetch-rs"
+                            }
+                        }
+                    }
+                    li {
+                        div { class: "flex py-3 flex-col gap-1",
+                            span { class: "text-overlay0", "information about ip's" }
+                            a {
+                                class: "underlined",
+                                href: "https://ipinf.vercel.app",
+                                "ipinfo"
+                            }
+                        }
+                    }
+                    li {
+                        div { class: "flex py-3 flex-col gap-1",
+                            span { class: "text-overlay0", "track postal shipments" }
+                            a {
+                                class: "underlined",
+                                href: "https://pstr.vercel.app",
+                                "tracking"
                             }
                         }
                     }
