@@ -3,7 +3,7 @@
 use async_std::task::sleep;
 use dioxus::prelude::*;
 use serde::Deserialize;
-use sir::{css, global_css, AppStyle};
+use sir::{global_css, AppStyle};
 use web_time::Instant;
 
 fn main() {
@@ -155,15 +155,6 @@ fn App() -> Element {
     "
     );
 
-    let item = css!(
-        "
-        display: flex;
-        flex-direction: column;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        gap: 4px;"
-    );
-
     rsx! {
         AppStyle {}
         main {
@@ -185,12 +176,17 @@ fn App() -> Element {
                 }
             }
             ul {
-                class: "animated-list",
+                class: "animated-list gridcols",
                 all: "unset",
                 display: "grid",
                 grid_template_columns: "repeat(auto-fit, minmax(300px, 1fr))",
                 li {
-                    div { class: item,
+                    div {
+                        display: "flex",
+                        flex_direction: "column",
+                        padding_top: "12px",
+                        padding_bottom: "12px",
+                        gap: "4px",
                         span { color: "var(--overlay0)", "github" }
                         a {
                             class: "underlined",
@@ -201,7 +197,12 @@ fn App() -> Element {
                 }
 
                 li {
-                    div { class: item,
+                    div {
+                        display: "flex",
+                        flex_direction: "column",
+                        padding_top: "12px",
+                        padding_bottom: "12px",
+                        gap: "4px",
                         span { color: "var(--overlay0)", "email" }
                         a {
                             class: "underlined",
@@ -218,7 +219,12 @@ fn App() -> Element {
                 display: "grid",
                 grid_template_columns: "repeat(auto-fit, minmax(300px, 1fr))",
                 li {
-                    div { class: item,
+                    div {
+                        display: "flex",
+                        flex_direction: "column",
+                        padding_top: "12px",
+                        padding_bottom: "12px",
+                        gap: "4px",
                         span { color: "var(--overlay0)", "view your weather" }
                         a {
                             class: "underlined",
@@ -228,7 +234,12 @@ fn App() -> Element {
                     }
                 }
                 li {
-                    div { class: item,
+                    div {
+                        display: "flex",
+                        flex_direction: "column",
+                        padding_top: "12px",
+                        padding_bottom: "12px",
+                        gap: "4px",
                         span { color: "var(--overlay0)", "simple todo app" }
                         a {
                             class: "underlined",
@@ -238,7 +249,12 @@ fn App() -> Element {
                     }
                 }
                 li {
-                    div { class: item,
+                    div {
+                        display: "flex",
+                        flex_direction: "column",
+                        padding_top: "12px",
+                        padding_bottom: "12px",
+                        gap: "4px",
                         span { color: "var(--overlay0)", "information about countries" }
                         a {
                             class: "underlined",
@@ -248,7 +264,12 @@ fn App() -> Element {
                     }
                 }
                 li {
-                    div { class: item,
+                    div {
+                        display: "flex",
+                        flex_direction: "column",
+                        padding_top: "12px",
+                        padding_bottom: "12px",
+                        gap: "4px",
                         span { color: "var(--overlay0)", "cli information about countries" }
                         a {
                             class: "underlined",
@@ -258,7 +279,12 @@ fn App() -> Element {
                     }
                 }
                 li {
-                    div { class: item,
+                    div {
+                        display: "flex",
+                        flex_direction: "column",
+                        padding_top: "12px",
+                        padding_bottom: "12px",
+                        gap: "4px",
                         span { color: "var(--overlay0)", "information about ip's" }
                         a {
                             class: "underlined",
@@ -268,7 +294,12 @@ fn App() -> Element {
                     }
                 }
                 li {
-                    div { class: item,
+                    div {
+                        display: "flex",
+                        flex_direction: "column",
+                        padding_top: "12px",
+                        padding_bottom: "12px",
+                        gap: "4px",
                         span { color: "var(--overlay0)", "track postal shipments" }
                         a {
                             class: "underlined",
