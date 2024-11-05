@@ -5,8 +5,6 @@ use dioxus::prelude::*;
 use serde::Deserialize;
 use web_time::Instant;
 
-const _TAILWIND_URL: &str = manganis::mg!(file("assets/tailwind.css"));
-
 fn main() {
     dioxus::launch(App);
 }
@@ -53,101 +51,99 @@ fn App() -> Element {
     );
 
     rsx! {
-        main { class: "mx-auto max-w-3xl px-6 pb-20",
-            div { class: "pt-16",
-                div {
-                    h1 { class: "mb-2 text-xl font-bold", "marie" }
-                    div { class: "text-overlay0 mb-5",
-                        if let Some(Ok(data)) = weather.read().as_ref() {
-                            p {
-                                "she/her, {data.main.temp.round()}°C {data.weather[0].description.as_str()}, {time}"
-                            }
+        document::Link { rel: "stylesheet", href: asset!("/assets/tailwind.css") }
+        div { class: "mx-auto max-w-3xl px-6 pb-20 pt-16",
+            div {
+                h1 { class: "mb-2 text-xl font-bold", "marie" }
+                div { class: "text-overlay0 mb-5",
+                    if let Some(Ok(data)) = weather.read().as_ref() {
+                        p {
+                            "she/her, {data.main.temp.round()}°C {data.weather[0].description.as_str()}, {time}"
                         }
                     }
                 }
-                ul { class: "animated-list grid grid-cols-1 sm:grid-cols-2",
-                    li {
-                        div { class: "flex py-3 flex-col gap-1",
-                            span { class: "text-overlay0", "github" }
-                            a {
-                                class: "underlined",
-                                href: "https://github.com/mariesavch",
-                                "mariesavch"
-                            }
-                        }
-                    }
-
-                    li {
-                        div { class: "flex py-3 flex-col gap-1",
-                            span { class: "text-overlay0", "email" }
-                            a {
-                                class: "underlined",
-                                href: "mailto:mariesavch@icloud.com",
-                                "mariesavch@icloud.com"
-                            }
+            }
+            ul { class: "animated-list grid grid-cols-1 sm:grid-cols-2",
+                li {
+                    div { class: "flex py-3 flex-col gap-1",
+                        span { class: "text-overlay0", "github" }
+                        a {
+                            class: "underlined",
+                            href: "https://github.com/mariesavch",
+                            "mariesavch"
                         }
                     }
                 }
-                h2 { class: "text-xl mb-2 mt-8 font-bold", "projects" }
-                ul { class: "animated-list grid grid-cols-1 sm:grid-cols-2",
-                    li {
-                        div { class: "flex py-3 flex-col gap-1",
-                            span { class: "text-overlay0", "view your weather" }
-                            a {
-                                class: "underlined",
-                                href: "https://wtrs.vercel.app",
-                                "weather"
-                            }
+                li {
+                    div { class: "flex py-3 flex-col gap-1",
+                        span { class: "text-overlay0", "email" }
+                        a {
+                            class: "underlined",
+                            href: "mailto:mariesavch@icloud.com",
+                            "mariesavch@icloud.com"
                         }
                     }
-                    li {
-                        div { class: "flex py-3 flex-col gap-1",
-                            span { class: "text-overlay0", "simple todo app" }
-                            a {
-                                class: "underlined",
-                                href: "https://tdwr.vercel.app",
-                                "todo"
-                            }
+                }
+            }
+            h2 { class: "text-xl mb-2 mt-8 font-bold", "projects" }
+            ul { class: "animated-list grid grid-cols-1 sm:grid-cols-2",
+                li {
+                    div { class: "flex py-3 flex-col gap-1",
+                        span { class: "text-overlay0", "view your weather" }
+                        a {
+                            class: "underlined",
+                            href: "https://wtrs.vercel.app",
+                            "weather"
                         }
                     }
-                    li {
-                        div { class: "flex py-3 flex-col gap-1",
-                            span { class: "text-overlay0", "information about countries" }
-                            a {
-                                class: "underlined",
-                                href: "https://cntrn.vercel.app",
-                                "countryinfo"
-                            }
+                }
+                li {
+                    div { class: "flex py-3 flex-col gap-1",
+                        span { class: "text-overlay0", "simple todo app" }
+                        a {
+                            class: "underlined",
+                            href: "https://tdwr.vercel.app",
+                            "todo"
                         }
                     }
-                    li {
-                        div { class: "flex py-3 flex-col gap-1",
-                            span { class: "text-overlay0", "cli information about countries" }
-                            a {
-                                class: "underlined",
-                                href: "https://github.com/mariesavch/countryfetch-rs",
-                                "countryfetch-rs"
-                            }
+                }
+                li {
+                    div { class: "flex py-3 flex-col gap-1",
+                        span { class: "text-overlay0", "information about countries" }
+                        a {
+                            class: "underlined",
+                            href: "https://cntrn.vercel.app",
+                            "countryinfo"
                         }
                     }
-                    li {
-                        div { class: "flex py-3 flex-col gap-1",
-                            span { class: "text-overlay0", "information about ip's" }
-                            a {
-                                class: "underlined",
-                                href: "https://ipinf.vercel.app",
-                                "ipinfo"
-                            }
+                }
+                li {
+                    div { class: "flex py-3 flex-col gap-1",
+                        span { class: "text-overlay0", "cli information about countries" }
+                        a {
+                            class: "underlined",
+                            href: "https://github.com/mariesavch/countryfetch-rs",
+                            "countryfetch-rs"
                         }
                     }
-                    li {
-                        div { class: "flex py-3 flex-col gap-1",
-                            span { class: "text-overlay0", "track postal shipments" }
-                            a {
-                                class: "underlined",
-                                href: "https://pstr.vercel.app",
-                                "tracking"
-                            }
+                }
+                li {
+                    div { class: "flex py-3 flex-col gap-1",
+                        span { class: "text-overlay0", "information about ip's" }
+                        a {
+                            class: "underlined",
+                            href: "https://ipinf.vercel.app",
+                            "ipinfo"
+                        }
+                    }
+                }
+                li {
+                    div { class: "flex py-3 flex-col gap-1",
+                        span { class: "text-overlay0", "track postal shipments" }
+                        a {
+                            class: "underlined",
+                            href: "https://pstr.vercel.app",
+                            "tracking"
                         }
                     }
                 }
