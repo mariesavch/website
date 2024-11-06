@@ -51,11 +51,18 @@ fn App() -> Element {
     );
 
     rsx! {
-        document::Link { rel: "stylesheet", href: asset!("/assets/tailwind.css") }
-        div { class: "mx-auto max-w-3xl px-6 pb-20 pt-16",
+        document::Link { rel: "stylesheet", href: asset!("/assets/main.css") }
+        main {
+            margin_left: "auto",
+            margin_right: "auto",
+            max_width: "768px",
+            padding_top: "64px",
+            padding_left: "24px",
+            padding_right: "24px",
+            padding_bottom: "80px",
             div {
-                h1 { class: "mb-2 text-xl font-bold", "marie" }
-                div { class: "text-overlay0 mb-5",
+                h1 { margin_bottom: "4px", font_size: "20px", "marie" }
+                div { margin_bottom: "20px", color: "var(--overlay0)",
                     if let Some(Ok(data)) = weather.read().as_ref() {
                         p {
                             "she/her, {data.main.temp.round()}°C {data.weather[0].description.as_str()}, {time}"
@@ -63,10 +70,14 @@ fn App() -> Element {
                     }
                 }
             }
-            ul { class: "animated-list grid grid-cols-1 sm:grid-cols-2",
+            ul {
+                class: "animated-list",
+                all: "unset",
+                display: "grid",
+                grid_template_columns: "repeat(auto-fit, minmax(300px, 1fr))",
                 li {
-                    div { class: "flex py-3 flex-col gap-1",
-                        span { class: "text-overlay0", "github" }
+                    div { class: "item",
+                        span { color: "var(--overlay0)", "github" }
                         a {
                             class: "underlined",
                             href: "https://github.com/mariesavch",
@@ -74,9 +85,10 @@ fn App() -> Element {
                         }
                     }
                 }
+
                 li {
-                    div { class: "flex py-3 flex-col gap-1",
-                        span { class: "text-overlay0", "email" }
+                    div { class: "item",
+                        span { color: "var(--overlay0)", "email" }
                         a {
                             class: "underlined",
                             href: "mailto:mariesavch@icloud.com",
@@ -85,11 +97,15 @@ fn App() -> Element {
                     }
                 }
             }
-            h2 { class: "text-xl mb-2 mt-8 font-bold", "projects" }
-            ul { class: "animated-list grid grid-cols-1 sm:grid-cols-2",
+            h2 { font_size: "20px", margin_bottom: "8px", margin_top: "32px", "projects" }
+            ul {
+                class: "animated-list",
+                all: "unset",
+                display: "grid",
+                grid_template_columns: "repeat(auto-fit, minmax(300px, 1fr))",
                 li {
-                    div { class: "flex py-3 flex-col gap-1",
-                        span { class: "text-overlay0", "view your weather" }
+                    div { class: "item",
+                        span { color: "var(--overlay0)", "view your weather" }
                         a {
                             class: "underlined",
                             href: "https://wtrs.vercel.app",
@@ -98,8 +114,8 @@ fn App() -> Element {
                     }
                 }
                 li {
-                    div { class: "flex py-3 flex-col gap-1",
-                        span { class: "text-overlay0", "simple todo app" }
+                    div { class: "item",
+                        span { color: "var(--overlay0)", "simple todo app" }
                         a {
                             class: "underlined",
                             href: "https://tdwr.vercel.app",
@@ -108,8 +124,8 @@ fn App() -> Element {
                     }
                 }
                 li {
-                    div { class: "flex py-3 flex-col gap-1",
-                        span { class: "text-overlay0", "information about countries" }
+                    div { class: "item",
+                        span { color: "var(--overlay0)", "information about countries" }
                         a {
                             class: "underlined",
                             href: "https://cntrn.vercel.app",
@@ -118,8 +134,8 @@ fn App() -> Element {
                     }
                 }
                 li {
-                    div { class: "flex py-3 flex-col gap-1",
-                        span { class: "text-overlay0", "cli information about countries" }
+                    div { class: "item",
+                        span { color: "var(--overlay0)", "cli information about countries" }
                         a {
                             class: "underlined",
                             href: "https://github.com/mariesavch/countryfetch-rs",
@@ -128,8 +144,8 @@ fn App() -> Element {
                     }
                 }
                 li {
-                    div { class: "flex py-3 flex-col gap-1",
-                        span { class: "text-overlay0", "information about ip's" }
+                    div { class: "item",
+                        span { color: "var(--overlay0)", "information about ip's" }
                         a {
                             class: "underlined",
                             href: "https://ipinf.vercel.app",
@@ -138,8 +154,8 @@ fn App() -> Element {
                     }
                 }
                 li {
-                    div { class: "flex py-3 flex-col gap-1",
-                        span { class: "text-overlay0", "track postal shipments" }
+                    div { class: "item",
+                        span { color: "var(--overlay0)", "track postal shipments" }
                         a {
                             class: "underlined",
                             href: "https://pstr.vercel.app",
